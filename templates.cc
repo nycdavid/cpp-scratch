@@ -10,18 +10,31 @@ using std::string;
 
 class Data {
   public:
+    Data();
     void Foo();
-    map<string, string> operator[](string key);
+    string* operator[](string key);
+    // void operator=(string value);
+  private:
+    map<string, string> m_strStore;
+    map<string, vector<string> > m_vctStore;
 };
+
+Data::Data() {
+}
 
 void Data::Foo() {
   cout << "Foo" << endl;
 }
 
-map<string, string> Data::operator[](string key) {
-  map<string, string> internal;
-  return internal["key"];
+string* Data::operator[](string key) {
+  // if key exists
+  m_strStore[key] = "";
+  return &m_strStore[key];
 }
+
+// void Data::operator=(string value) {
+//
+// }
 
 int main() {
   // How can we create a map that has strings for keys but allows any type of
@@ -29,5 +42,6 @@ int main() {
   Data d;
   d.Foo();
   d["foo"] = "bar";
+  cout << d["foo"] << endl;
   return 0;
 }
