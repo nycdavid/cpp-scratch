@@ -8,7 +8,7 @@ compile:
 	-v $(shell pwd):/app \
 	--rm \
 	cppgd:latest \
-	/bin/bash -c "g++ -std=c++14 -o /app/runProg regex.cc && /app/runProg"
+	/bin/bash -c "g++ -std=c++14 -o /app/runProg templates.cc && /app/runProg"
 test:
 	docker run \
 	-v $(shell pwd)/tests:/app/tests \
