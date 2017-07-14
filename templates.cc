@@ -6,19 +6,21 @@ using std::cout;
 using std::endl;
 using std::map;
 using std::vector;
+using std::string;
 
 class Data {
   public:
     void Foo();
-    void operator[](string key);
+    map<string, string> operator[](string key);
 };
 
 void Data::Foo() {
   cout << "Foo" << endl;
 }
 
-void operator[](string key) {
-  
+map<string, string> Data::operator[](string key) {
+  map<string, string> internal;
+  return internal["key"];
 }
 
 int main() {
