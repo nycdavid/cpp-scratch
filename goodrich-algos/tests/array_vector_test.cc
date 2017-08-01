@@ -5,6 +5,8 @@
 TEST_CASE("ArrayVector class") {
   SECTION("scratch") {
     ArrayVector av;
-    av[0] = std::string{"first"};
+    av[0] = 8;
+
+    // REQUIRE(av[0] == 87);
   }
 }

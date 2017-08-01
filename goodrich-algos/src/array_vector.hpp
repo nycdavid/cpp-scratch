@@ -1,10 +1,10 @@
 #include <iostream>
-typedef std::string Elem;
+typedef int Elem;
 
 class ArrayVector {
   public:
     ArrayVector();
-    Elem& operator[](std::string str);
+    Elem& operator[](int idx);
   private:
     Elem* A;
 };
