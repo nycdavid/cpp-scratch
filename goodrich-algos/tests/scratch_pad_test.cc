@@ -1,12 +1,11 @@
 #define CATCH_CONFIG_MAIN
 #include "../vendor/catch.hpp"
-#include "../src/array_vector.hpp"
+#include "../src/scratch_pad.hpp"
 
 TEST_CASE("ArrayVector class") {
   SECTION("scratch") {
-    ArrayVector av;
-    av[0] = 8;
+    Person p;
 
-    // REQUIRE(av[0] == 87);
+    std::cout << p.m_publicAttr << std::endl;
   }
 }
